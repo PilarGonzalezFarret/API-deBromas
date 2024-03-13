@@ -1,6 +1,6 @@
-const Broma = require("../modells/broma.modells");
+const Broma = require("../models/broma.model");
 
-modells.exports.getBromas = async (req, res) => {
+model.exports.getBromas = async (req, res) => {
     try {
         const Bromas = await Broma.find();
         res.status(200);
@@ -10,7 +10,7 @@ modells.exports.getBromas = async (req, res) => {
         res.json(error);
     }
 };
-modells.exports.getBromaById = async (req, res) => {
+model.exports.getBromaById = async (req, res) => {
     try {
         const findBromas = await Broma.findById(req.params.id);
         res.status(200);
@@ -20,7 +20,7 @@ modells.exports.getBromaById = async (req, res) => {
         res.json(error);
     }
 };
-modells.exports.getBromasRandom = async (req, res) => {
+model.exports.getBromasRandom = async (req, res) => {
     try {
         const Bromas = await Broma.find();
         const randValue = Math.round(Math.random() * (Bromas.length - 1));
